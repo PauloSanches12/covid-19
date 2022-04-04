@@ -12,3 +12,8 @@ export const Item = styled.div`
     justify-content: space-between;
     min-width: 150px;
 `
+
+export const Div = styled.div`
+    display: flex; 
+    flex-Direction: column
+`
