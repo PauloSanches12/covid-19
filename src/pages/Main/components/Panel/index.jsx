@@ -1,5 +1,5 @@
 import { memo } from "react";
-import RefreshIcon from "../../../../assets/images/refresh.svg";
+// import RefreshIcon from "../../../../assets/images/refresh.svg";
 import { Card, Typography, Button, Select, MenuItem } from "../../../../components";
 import COUNTRIES from "../../../../commons/constants/countries";
 import { CardPanelContent, Item, Div } from "./styles";

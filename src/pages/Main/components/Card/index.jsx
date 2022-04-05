@@ -1,5 +1,5 @@
 import { memo } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { Card as CardUI } from "../../../../components";
 import { Label, Value, CardContentStyled } from "./styles";
 
