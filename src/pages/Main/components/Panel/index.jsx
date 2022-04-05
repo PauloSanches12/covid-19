@@ -4,9 +4,9 @@ import { Card, Typography, Button, Select, MenuItem } from "../../../../componen
 import COUNTRIES from "../../../../commons/constants/countries";
 import { CardPanelContent, Item, Div } from "./styles";
 
-const navigationHasShare = navigator.share;
 
 function Panel({ updateAt, onChange, data, country, getCovidData }) {
+    const tela = window.screen.width;
     const { cases, recovered, deaths, todayCases, todayDeaths } = data;
 
     const renderCountries = (country, index) => (
@@ -18,7 +18,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
         </MenuItem>
     )
 
-    const textCovid19 = `País: ${country} - recuperados: ${recovered}`;
+    const textCovid19 = `País: ${country} - recuperados: ${recovered} - Casos: ${cases} Óbitos: ${deaths} - Casos hoje: ${todayCases} Óbitos hoje: ${todayDeaths} `;
 
     const copyInfo = () => {
         navigator.clipboard.writeText(textCovid19)
@@ -32,7 +32,6 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
         })
     }
     
-
     const renderShareButton = (
         <div>
             <Button variant="contained" color="primary" onClick={shareInfo}>
@@ -62,7 +61,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
                         </Select>
                     </div>
                 </Div>
-                {navigationHasShare ? renderShareButton : renderCopyButton}
+                {tela > 500 ? renderShareButton : renderCopyButton}
             </CardPanelContent>
         </Card>
     )
